@@ -22,6 +22,8 @@ public class Accueil {
 				try {
 					Accueil window = new Accueil();
 					window.frame.setVisible(true);
+					//BDD bdd = new BDD();
+					//bdd.connexion_bdd();
 				} catch (Exception e) {
 					e.printStackTrace();
 				}

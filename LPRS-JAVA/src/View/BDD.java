@@ -4,7 +4,7 @@ import java.sql.SQLException;
 import com.sun.jdi.connect.spi.Connection;
 
 public class BDD {
-	public void connexion() {
+	public void connexion_bdd() {
 	// On stock dans des variables l'URL de connexion à la base de données avec les identi?ants 
 	 String url="jdbc:mysql://localhost/gest?serverTimezone=UTC"; 
     String user="root"; 
@@ -25,4 +25,6 @@ public class BDD {
             e.printStackTrace(); 
     } 
 }
+
+
 }
