@@ -16,6 +16,8 @@ public class Accueil {
 	/**
 	 * Launch the application.
 	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
 					Accueil window = new Accueil();
@@ -26,7 +28,8 @@ public class Accueil {
 					e.printStackTrace();
 				}
 			}
-	
+		});
+	}
 	
 
 	/**
