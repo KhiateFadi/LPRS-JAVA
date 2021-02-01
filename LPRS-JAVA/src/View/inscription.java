@@ -1,11 +1,16 @@
 package View;
 
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import java.awt.BorderLayout;
 import javax.swing.JTextField;
+
+import manager.ConnexionJM;
+
 import javax.swing.JButton;
 
 public class inscription {
@@ -58,11 +63,11 @@ public class inscription {
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
 		
-		JLabel lblNewLabel_2 = new JLabel("Pr\u00E9nom");
+		JLabel lblNewLabel_2 = new JLabel("Prenom");
 		lblNewLabel_2.setBounds(46, 96, 49, 14);
 		frame.getContentPane().add(lblNewLabel_2);
 		
-		JLabel lblNewLabel_3 = new JLabel("Email");
+		JLabel lblNewLabel_3 = new JLabel("mail");
 		lblNewLabel_3.setBounds(46, 138, 49, 14);
 		frame.getContentPane().add(lblNewLabel_3);
 		
@@ -87,6 +92,19 @@ public class inscription {
 		
 		JButton btnNewButton = new JButton("Valider");
 		btnNewButton.setBounds(152, 215, 100, 23);
+		btnNewButton.addActionListener(new ActionListener() {
+
+			public void actionPerformed(ActionEvent arg0) {
+				String nom = textField.getText();
+				String prenom = textField_1.getText();
+				String mail = textField_2.getText();
+				String mdp = textField_3.getText();&
+				// TODO Auto-generated method stub
+				ConnexionJM insert = new ConnexionJM();
+				insert.AjouterP(nom,prenom,mail,mdp);
+			}
+
+			});
 		frame.getContentPane().add(btnNewButton);
 	}
 
