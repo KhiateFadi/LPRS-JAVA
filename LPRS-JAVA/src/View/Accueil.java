@@ -11,13 +11,11 @@ import java.awt.event.ActionEvent;
 
 public class Accueil {
 
-	private JFrame frame;
+	JFrame frame;
 
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
 					Accueil window = new Accueil();
@@ -28,8 +26,8 @@ public class Accueil {
 					e.printStackTrace();
 				}
 			}
-		});
-	}
+	
+	
 
 	/**
 	 * Create the application.
@@ -48,7 +46,7 @@ public class Accueil {
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Bienvenue");
-		lblNewLabel.setBounds(177, 48, 125, 23);
+		lblNewLabel.setBounds(187, 49, 125, 23);
 		frame.getContentPane().add(lblNewLabel);
 		
 		JButton btnNewButton = new JButton("Connexion");
@@ -59,7 +57,7 @@ public class Accueil {
 				
 			}
 		});
-		btnNewButton.setBounds(177, 99, 125, 23);
+		btnNewButton.setBounds(150, 100, 125, 23);
 		frame.getContentPane().add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Inscription");
@@ -70,7 +68,11 @@ public class Accueil {
 				
 			}
 		});
-		btnNewButton_1.setBounds(177, 173, 125, 23);
+		btnNewButton_1.setBounds(150, 171, 125, 23);
 		frame.getContentPane().add(btnNewButton_1);
+		
+		JButton btnNewButton_2 = new JButton("Profils admin");
+		btnNewButton_2.setBounds(337, 229, 99, 23);
+		frame.getContentPane().add(btnNewButton_2);
 	}
 }
