@@ -30,7 +30,7 @@ public class Accueil {
 			}
 		});
 	}
-	
+
 
 	/**
 	 * Create the application.
@@ -47,35 +47,45 @@ public class Accueil {
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-		
+
 		JLabel lblNewLabel = new JLabel("Bienvenue");
 		lblNewLabel.setBounds(187, 49, 125, 23);
 		frame.getContentPane().add(lblNewLabel);
-		
+
 		JButton btnNewButton = new JButton("Connexion");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				connexion connexion = new connexion();
 				connexion.frame.setVisible(true);
 				
+
 			}
 		});
+
 		btnNewButton.setBounds(150, 100, 125, 23);
 		frame.getContentPane().add(btnNewButton);
-		
+
 		JButton btnNewButton_1 = new JButton("Inscription");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				inscription inscription = new inscription();
 				inscription.frame.setVisible(true);
-				
+
 			}
 		});
 		btnNewButton_1.setBounds(150, 171, 125, 23);
 		frame.getContentPane().add(btnNewButton_1);
-		
+
 		JButton btnNewButton_2 = new JButton("Profils admin");
-		btnNewButton_2.setBounds(337, 229, 99, 23);
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				profils_admin0 profils_admin0=new profils_admin0();
+				profils_admin0.run();
+			
+			}
+		});
+		
+		btnNewButton_2.setBounds(310, 229, 116, 23);
 		frame.getContentPane().add(btnNewButton_2);
 	}
 }

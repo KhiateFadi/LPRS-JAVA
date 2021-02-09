@@ -48,7 +48,7 @@ public class sanction {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("New label");
+		JLabel lblNewLabel = new JLabel("Sanction");
 		lblNewLabel.setBounds(187, 25, 49, 14);
 		frame.getContentPane().add(lblNewLabel);
 		
@@ -72,7 +72,7 @@ public class sanction {
 		frame.getContentPane().add(textField_3);
 		textField_3.setColumns(10);
 		
-		JButton btnNewButton = new JButton("New button");
+		JButton btnNewButton = new JButton("Valider");
 		btnNewButton.setBounds(163, 217, 96, 23);
 		frame.getContentPane().add(btnNewButton);
 		

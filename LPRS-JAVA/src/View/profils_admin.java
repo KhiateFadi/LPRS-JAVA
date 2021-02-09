@@ -11,13 +11,12 @@ import java.awt.event.ActionEvent;
 
 public class profils_admin {
 
-	private JFrame frame;
+	JFrame frame;
 
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
+		
 			public void run() {
 				try {
 					profils_admin window = new profils_admin();
@@ -26,10 +25,9 @@ public class profils_admin {
 					e.printStackTrace();
 				}
 			}
-		});
-	}
 	
-	main
+	
+	
 
 	/**
 	 * Create the application.
@@ -66,6 +64,7 @@ public class profils_admin {
 				Accueil.frame.setVisible(true);
 			}
 		});
+		
 		btnNewButton_2.setBounds(143, 203, 139, 23);
 		frame.getContentPane().add(btnNewButton_2);
 	}
