@@ -1,11 +1,16 @@
 package View;
 
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import java.awt.BorderLayout;
 import javax.swing.JTextField;
+
+import manager.ConnexionJM;
+
 import javax.swing.JButton;
 
 public class connexion {
@@ -62,6 +67,17 @@ public class connexion {
 		
 		JButton btnNewButton = new JButton("Valider");
 		btnNewButton.setBounds(154, 199, 96, 23);
+		btnNewButton.addActionListener(new ActionListener() {
+
+			public void actionPerformed(ActionEvent arg0) {
+				String mail = textField.getText();
+				String mdp = textField_1.getText();
+				// TODO Auto-generated method stub
+				ConnexionJM insert = new ConnexionJM();
+				insert.recherche(mail,mdp);
+			}
+
+			});
 		frame.getContentPane().add(btnNewButton);
 		
 		JLabel lblNewLabel_1 = new JLabel("Email");

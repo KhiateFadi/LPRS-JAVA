@@ -98,7 +98,7 @@ public class inscription {
 				String nom = textField.getText();
 				String prenom = textField_1.getText();
 				String mail = textField_2.getText();
-				String mdp = textField_3.getText();&
+				String mdp = textField_3.getText();
 				// TODO Auto-generated method stub
 				ConnexionJM insert = new ConnexionJM();
 				insert.AjouterP(nom,prenom,mail,mdp);

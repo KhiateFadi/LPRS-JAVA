@@ -16,8 +16,7 @@ public class profils_admin {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
+
 			public void run() {
 				try {
 					profils_admin window = new profils_admin();
@@ -26,18 +25,14 @@ public class profils_admin {
 					e.printStackTrace();
 				}
 			}
-		});
-	}
+		
 	
-	main
-
 	/**
 	 * Create the application.
 	 */
 	public profils_admin() {
 		initialize();
 	}
-
 	/**
 	 * Initialize the contents of the frame.
 	 */
