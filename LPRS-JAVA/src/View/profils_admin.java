@@ -16,7 +16,11 @@ public class profils_admin {
 	/**
 	 * Launch the application.
 	 */
+<<<<<<< HEAD
 		
+=======
+
+>>>>>>> branch 'master' of https://github.com/KhiateFadi/LPRS-JAVA.git
 			public void run() {
 				try {
 					profils_admin window = new profils_admin();
@@ -25,17 +29,23 @@ public class profils_admin {
 					e.printStackTrace();
 				}
 			}
+<<<<<<< HEAD
+=======
+		
+>>>>>>> branch 'master' of https://github.com/KhiateFadi/LPRS-JAVA.git
 	
+<<<<<<< HEAD
 	
 	
 
+=======
+>>>>>>> branch 'master' of https://github.com/KhiateFadi/LPRS-JAVA.git
 	/**
 	 * Create the application.
 	 */
 	public profils_admin() {
 		initialize();
 	}
-
 	/**
 	 * Initialize the contents of the frame.
 	 */

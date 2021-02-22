@@ -6,9 +6,13 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.sql.Date;
 import java.awt.event.ActionEvent;
 import java.awt.BorderLayout;
 import javax.swing.JTextField;
+
+import manager.ConnexionJM;
+
 import javax.swing.JOptionPane;
 
 public class abscence {
@@ -95,7 +99,13 @@ public class abscence {
 		JButton btnNewButton = new JButton("Valider");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			
+				String nom = textField.getText();
+				String prenom = textField_1.getText();
+				String classe = textField_2.getText();
+				String date = textField_3.getText();
+				// TODO Auto-generated method stub
+				ConnexionJM insert = new ConnexionJM();
+				insert.AjouterAbs(nom,prenom,classe,date);
 			}
 		});
 		btnNewButton.setBounds(156, 212, 96, 23);

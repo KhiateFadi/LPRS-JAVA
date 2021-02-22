@@ -17,8 +17,7 @@ public class accueil_prof {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
+	
 			public void run() {
 				try {
 					accueil_prof window = new accueil_prof();
@@ -27,8 +26,8 @@ public class accueil_prof {
 					e.printStackTrace();
 				}
 			}
-		});
-	}
+		
+	
 
 	/**
 	 * Create the application.

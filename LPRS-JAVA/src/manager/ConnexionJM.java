@@ -1,13 +1,16 @@
 package manager;
 import java.sql.*;
+
+import View.accueil_prof;
+import View.prenom;
 /**
  *
  * @author Said
  */
 public class ConnexionJM {
- static Connection cnx;
- static Statement st;
- static ResultSet rst;
+ private Connection cnx;
+ private Statement st;
+ private ResultSet rst;
   
     /**
      * @param args the command line arguments
@@ -38,7 +41,7 @@ public class ConnexionJM {
     
   
     
-    public static Connection  connecterDB(){
+    public Connection  connecterDB(){
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             System.out.println("Driver oki");
@@ -53,8 +56,22 @@ public class ConnexionJM {
             return null;
         }
     }
+    
+    public void AjouterAbs(String nom,String prenom,String classe,String date){
+        try{
+            String query="INSERT INTO absence(nom,prenom,classe,date) VALUES('"+nom+"','"+prenom+"','"+classe+"','"+date+"')";
+            System.out.println(query);
+            cnx=connecterDB();
+            st=cnx.createStatement();
+            st.executeUpdate(query);
+            System.out.println("Bien ajouté");
+            
+        }catch(SQLException e){
+            System.err.println(e.getMessage());
+        }
+    }
    
-    public static void AjouterP(String nom,String prenom,String mail,String mdp){
+    public void AjouterP(String nom,String prenom,String mail,String mdp){
         try{
             String query="INSERT INTO utilisateur(nom,prenom,mail,mdp) VALUES('"+nom+"','"+prenom+"','"+mail+"','"+mdp+"')";
             System.out.println(query);
@@ -70,7 +87,7 @@ public class ConnexionJM {
         
     }
    
-    public static void SupprimerParID(int id){
+    public void SupprimerParID(int id){
         try{
            String query="DELETE FROM utilisateur WHERE id="+id; 
            cnx=connecterDB();
@@ -83,18 +100,19 @@ public class ConnexionJM {
         }
     }
    
-    public static void recherche(String nom){
+    public void recherche(String mail, String mdp){
         try{
-           String query="SELECT * FROM utilisateur WHERE nom='"+nom+"'"; 
+           String query="SELECT * FROM utilisateur WHERE mail='"+mail+"' AND mdp='"+mdp+"'"; 
            cnx=connecterDB();
            st=cnx.createStatement();
            rst= st.executeQuery(query);
-           rst.last();
-           int nbrRow = rst.getRow();
-           if(nbrRow!=0){
+          
+           if(rst.next()){
                System.out.println("Trouve");
+               accueil_prof accueil=new accueil_prof();
+               accueil.run();
            }else{
-                System.out.println("on trouve");
+                System.out.println("pas trouve");
                
            }
            
@@ -105,7 +123,7 @@ public class ConnexionJM {
         
     }
     
-   public static void ModifierP(int id,String nom,String prenom,String mail,String mdp){
+   public void ModifierP(int id,String nom,String prenom,String mail,String mdp){
        try{
            String query="UPDATE utilisateur SET nom='"+nom
                    +"', prenom="+prenom
@@ -123,6 +141,8 @@ public class ConnexionJM {
        
        
    }
+
+
     
     
     
