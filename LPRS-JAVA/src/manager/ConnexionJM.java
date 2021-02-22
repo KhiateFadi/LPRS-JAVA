@@ -1,8 +1,14 @@
 package manager;
 import java.sql.*;
 
+import javax.swing.JOptionPane;
+
 import View.accueil_prof;
 import View.profils_admin;
+import View.manager.MessagingException;
+import View.manager.bdd;
+import View.manager.connexion;
+import View.manager.inscription;
 /**
  *
  * @author Said
@@ -193,7 +199,46 @@ public class ConnexionJM {
        }
    }
     
-    
+   public static void ajouter(String nom, String prenom, String email, String tel, Object mdp) {
+
+	// TODO Auto-generated method stub
+
+	// Connexion a la BDD //
+
+	// Gestion d'erreur //
+	if (!email.contains("@")) {
+	jOptionPane1.showMessageDialog(null, "Erreur email non valide", "Alerte", JOptionPane.ERROR_MESSAGE);
+	inscription window = new inscription();
+	window.frame.setVisible(true);
+	}
+	else {
+	try {//V�rification de l'identifiant et du mot de passe de la bdd, execution de la requette //
+	bdd connexion = new bdd();
+
+	Connection cnx = connexion.connexion();
+
+	Statement stmt = cnx.createStatement();
+	ResultSet rs;
+	stmt.execute("INSERT INTO compte (nom, prenom, email, tel, mdp, role)" + "VALUES ('" + nom + "', '"+ prenom + "', '" + email + "', '" + tel + "', '" + mdp + "', 'prof')");
+	jOptionPane1.showMessageDialog(null, "Inscription réussie.", "Inscription", JOptionPane.INFORMATION_MESSAGE) ;
+	try {
+	EnvoyerEmail.envoyer(email);
+	} catch (MessagingException e) {
+	// TODO Auto-generated catch block
+	e.printStackTrace();
+	}
+	connexion window = new connexion();
+	window.frame.setVisible(true);  
+	cnx.close();
+	}catch (SQLException e) {
+	jOptionPane1.showMessageDialog(null, "erreur veuillez réessayer", "Alerte", JOptionPane.ERROR_MESSAGE);
+	inscription window = new inscription();
+	window.frame.setVisible(true);
+	e.printStackTrace();
+
+	}
+	}
+	}
     
     
    

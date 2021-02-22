@@ -12,7 +12,6 @@ import java.awt.event.ActionEvent;
 public class Accueil {
 
 	JFrame frame;
-
 	/**
 	 * Launch the application.
 	 */
@@ -30,8 +29,6 @@ public class Accueil {
 			}
 		});
 	}
-
-
 	/**
 	 * Create the application.
 	 */
@@ -58,7 +55,6 @@ public class Accueil {
 				connexion connexion = new connexion();
 				connexion.frame.setVisible(true);
 				
-
 			}
 		});
 
