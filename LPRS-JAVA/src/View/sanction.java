@@ -1,11 +1,16 @@
 package View;
 
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import java.awt.BorderLayout;
 import javax.swing.JTextField;
+
+import manager.ConnexionJM;
+
 import javax.swing.JButton;
 
 public class sanction {
@@ -73,6 +78,17 @@ public class sanction {
 		textField_3.setColumns(10);
 		
 		JButton btnNewButton = new JButton("Valider");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String nom = textField.getText();
+				String prenom = textField_1.getText();
+				String classe = textField_2.getText();
+				String sanction = textField_3.getText();
+				// TODO Auto-generated method stub
+				ConnexionJM insert = new ConnexionJM();
+				insert.AjouterSanction(nom,prenom,classe,sanction);
+			}
+		});
 		btnNewButton.setBounds(163, 217, 96, 23);
 		frame.getContentPane().add(btnNewButton);
 		
@@ -88,7 +104,7 @@ public class sanction {
 		lblNewLabel_3.setBounds(50, 143, 49, 14);
 		frame.getContentPane().add(lblNewLabel_3);
 		
-		JLabel lblNewLabel_4 = new JLabel("Type");
+		JLabel lblNewLabel_4 = new JLabel("Sanction");
 		lblNewLabel_4.setBounds(50, 184, 49, 14);
 		frame.getContentPane().add(lblNewLabel_4);
 	}

@@ -2,7 +2,7 @@ package manager;
 import java.sql.*;
 
 import View.accueil_prof;
-import View.prenom;
+import View.profils_admin;
 /**
  *
  * @author Said
@@ -70,6 +70,20 @@ public class ConnexionJM {
             System.err.println(e.getMessage());
         }
     }
+    
+    public void AjouterRetard(String nom,String prenom,String classe,String date){
+        try{
+            String query="INSERT INTO retard(nom,prenom,classe,date) VALUES('"+nom+"','"+prenom+"','"+classe+"','"+date+"')";
+            System.out.println(query);
+            cnx=connecterDB();
+            st=cnx.createStatement();
+            st.executeUpdate(query);
+            System.out.println("Bien ajouté");
+            
+        }catch(SQLException e){
+            System.err.println(e.getMessage());
+        }
+    }
    
     public void AjouterP(String nom,String prenom,String mail,String mdp){
         try{
@@ -123,6 +137,29 @@ public class ConnexionJM {
         
     }
     
+    public void rechercheadm(String mail, String mdp){
+        try{
+           String query="SELECT * FROM utilisateur WHERE mail='"+mail+"' AND mdp='"+mdp+"'"; 
+           cnx=connecterDB();
+           st=cnx.createStatement();
+           rst= st.executeQuery(query);
+          
+           if(rst.next()){
+               System.out.println("Trouve");
+               profils_admin profils_admin=new profils_admin();
+               profils_admin.run();
+           }else{
+                System.out.println("pas trouve");
+               
+           }
+           
+            
+        }catch(SQLException e){
+            System.out.println(e.getMessage());
+        }
+        
+    }
+    
    public void ModifierP(int id,String nom,String prenom,String mail,String mdp){
        try{
            String query="UPDATE utilisateur SET nom='"+nom
@@ -142,7 +179,19 @@ public class ConnexionJM {
        
    }
 
-
+   public void AjouterSanction(String nom,String prenom,String classe,String sanction){
+       try{
+           String query="INSERT INTO sanction(nom,prenom,classe,sanction) VALUES('"+nom+"','"+prenom+"','"+classe+"','"+sanction+"')";
+           System.out.println(query);
+           cnx=connecterDB();
+           st=cnx.createStatement();
+           st.executeUpdate(query);
+           System.out.println("Bien ajouté");
+           
+       }catch(SQLException e){
+           System.err.println(e.getMessage());
+       }
+   }
     
     
     

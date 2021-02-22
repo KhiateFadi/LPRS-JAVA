@@ -6,6 +6,9 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import java.awt.BorderLayout;
 import javax.swing.JTextField;
+
+import manager.ConnexionJM;
+
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -65,8 +68,10 @@ public class profils_admin0 {
 		JButton btnNewButton = new JButton("Valider");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				profils_admin profils_admin=new profils_admin();
-				profils_admin.run();
+				String mail = textField.getText();
+				String mdp = textField_1.getText();
+				ConnexionJM insert = new ConnexionJM();
+				insert.rechercheadm(mail,mdp);
 			}
 		});
 		btnNewButton.setBounds(167, 209, 96, 23);

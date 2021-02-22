@@ -1,11 +1,16 @@
 package View;
 
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import java.awt.BorderLayout;
 import javax.swing.JTextField;
+
+import manager.ConnexionJM;
+
 import javax.swing.JButton;
 
 public class retard {
@@ -88,7 +93,18 @@ public class retard {
 		lblNewLabel_4.setBounds(44, 184, 49, 14);
 		frame.getContentPane().add(lblNewLabel_4);
 		
-		JButton btnNewButton = new JButton("New button");
+		JButton btnNewButton = new JButton("Valider");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String nom = textField.getText();
+				String prenom = textField_1.getText();
+				String classe = textField_2.getText();
+				String date = textField_3.getText();
+				// TODO Auto-generated method stub
+				ConnexionJM insert = new ConnexionJM();
+				insert.AjouterRetard(nom,prenom,classe,date);
+			}
+		});
 		btnNewButton.setBounds(143, 217, 96, 23);
 		frame.getContentPane().add(btnNewButton);
 	}

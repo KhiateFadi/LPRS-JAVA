@@ -31,7 +31,7 @@ public class inscription {
 		this.mdp = mdp;
 	}
 
-	public char getPrenom() {
+	public String getPrenom() {
 		return prenom;
 	}
 
