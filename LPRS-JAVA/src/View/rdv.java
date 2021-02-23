@@ -4,20 +4,13 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
-import java.sql.Date;
 import java.awt.event.ActionEvent;
-import java.awt.BorderLayout;
-import javax.swing.JTextField;
 
-import manager.ConnexionJM;
+public class rdv {
 
-import javax.swing.JOptionPane;
-
-public class abscence {
-
-	protected static final String JOptionPanel = null;
 	JFrame frame;
 	private JTextField textField;
 	private JTextField textField_1;
@@ -31,7 +24,7 @@ public class abscence {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					abscence window = new abscence();
+					rdv window = new rdv();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -43,7 +36,7 @@ public class abscence {
 	/**
 	 * Create the application.
 	 */
-	public abscence() {
+	public rdv() {
 		initialize();
 	}
 
@@ -56,59 +49,52 @@ public class abscence {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Abscence");
-		lblNewLabel.setBounds(179, 22, 49, 14);
+		JLabel lblNewLabel = new JLabel("Rendez-vous ");
+		lblNewLabel.setBounds(165, 21, 96, 14);
 		frame.getContentPane().add(lblNewLabel);
 		
 		textField = new JTextField();
-		textField.setBounds(156, 59, 96, 20);
+		textField.setBounds(150, 51, 96, 20);
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
 		
 		textField_1 = new JTextField();
-		textField_1.setBounds(156, 100, 96, 20);
+		textField_1.setBounds(150, 90, 96, 20);
 		frame.getContentPane().add(textField_1);
 		textField_1.setColumns(10);
 		
 		textField_2 = new JTextField();
-		textField_2.setBounds(156, 138, 96, 20);
+		textField_2.setBounds(150, 128, 96, 20);
 		frame.getContentPane().add(textField_2);
 		textField_2.setColumns(10);
 		
 		textField_3 = new JTextField();
-		textField_3.setBounds(156, 169, 96, 20);
+		textField_3.setBounds(150, 166, 96, 20);
 		frame.getContentPane().add(textField_3);
 		textField_3.setColumns(10);
-		
-		JLabel lblNewLabel_1 = new JLabel("Nom");
-		lblNewLabel_1.setBounds(46, 62, 49, 14);
-		frame.getContentPane().add(lblNewLabel_1);
-		
-		JLabel lblNewLabel_2 = new JLabel("Pr\u00E9nom");
-		lblNewLabel_2.setBounds(46, 103, 49, 14);
-		frame.getContentPane().add(lblNewLabel_2);
-		
-		JLabel lblNewLabel_3 = new JLabel("Classe");
-		lblNewLabel_3.setBounds(46, 141, 49, 14);
-		frame.getContentPane().add(lblNewLabel_3);
-		
-		JLabel lblNewLabel_4 = new JLabel("Date");
-		lblNewLabel_4.setBounds(46, 172, 49, 14);
-		frame.getContentPane().add(lblNewLabel_4);
 		
 		JButton btnNewButton = new JButton("Valider");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String nom = textField.getText();
-				String prenom = textField_1.getText();
-				String classe = textField_2.getText();
-				String date = textField_3.getText();
-				// TODO Auto-generated method stub
-				ConnexionJM insert = new ConnexionJM();
-				insert.AjouterAbs(nom,prenom,classe,date);
 			}
 		});
-		btnNewButton.setBounds(156, 212, 96, 23);
+		btnNewButton.setBounds(150, 209, 96, 23);
 		frame.getContentPane().add(btnNewButton);
+		
+		JLabel lblNewLabel_1 = new JLabel("Nom");
+		lblNewLabel_1.setBounds(43, 54, 49, 14);
+		frame.getContentPane().add(lblNewLabel_1);
+		
+		JLabel lblNewLabel_2 = new JLabel("Pr\u00E9nom");
+		lblNewLabel_2.setBounds(43, 93, 49, 14);
+		frame.getContentPane().add(lblNewLabel_2);
+		
+		JLabel lblNewLabel_3 = new JLabel("Classe");
+		lblNewLabel_3.setBounds(43, 131, 49, 14);
+		frame.getContentPane().add(lblNewLabel_3);
+		
+		JLabel lblNewLabel_4 = new JLabel("Date");
+		lblNewLabel_4.setBounds(43, 169, 49, 14);
+		frame.getContentPane().add(lblNewLabel_4);
 	}
 }

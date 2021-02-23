@@ -52,7 +52,7 @@ public class connexion {
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Connectez vous");
-		lblNewLabel.setBounds(154, 36, 90, 14);
+		lblNewLabel.setBounds(154, 36, 159, 14);
 		frame.getContentPane().add(lblNewLabel);
 		
 		textField = new JTextField();

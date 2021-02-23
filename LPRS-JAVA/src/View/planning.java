@@ -6,7 +6,7 @@ import javax.swing.JFrame;
 
 public class planning {
 
-	private JFrame frame;
+	JFrame frame;
 
 	/**
 	 * Launch the application.

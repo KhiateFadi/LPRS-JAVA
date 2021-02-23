@@ -15,7 +15,7 @@ import javax.swing.JButton;
 
 public class retard {
 
-	private JFrame frame;
+	JFrame frame;
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
