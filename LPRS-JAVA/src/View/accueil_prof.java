@@ -1,11 +1,17 @@
 package View;
 
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.List;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import java.awt.BorderLayout;
 import javax.swing.JMenuBar;
+
+import manager.ConnexionJM;
+
 import java.awt.Checkbox;
 import javax.swing.JComboBox;
 import javax.swing.JButton;
@@ -45,9 +51,16 @@ public class accueil_prof {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JComboBox comboBox = new JComboBox();
+		JComboBox<String> comboBox = new JComboBox<String>();
 		comboBox.setBounds(154, 67, 107, 22);
 		frame.getContentPane().add(comboBox);
+		ConnexionJM insert = new ConnexionJM();
+		List<String> tabClasse = insert.rechercheclasse();
+
+		for(String s : tabClasse) {
+			comboBox.addItem();
+		}
+		;
 		
 		JLabel lblNewLabel = new JLabel("classe ");
 		lblNewLabel.setBounds(26, 71, 49, 14);

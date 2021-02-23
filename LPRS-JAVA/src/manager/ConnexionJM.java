@@ -1,14 +1,10 @@
 package manager;
 import java.sql.*;
-
-import javax.swing.JOptionPane;
+import java.util.ArrayList;
+import java.util.List;
 
 import View.accueil_prof;
 import View.profils_admin;
-import View.manager.MessagingException;
-import View.manager.bdd;
-import View.manager.connexion;
-import View.manager.inscription;
 /**
  *
  * @author Said
@@ -22,7 +18,6 @@ public class ConnexionJM {
      * @param args the command line arguments
      */
    // public static void main(String[] args) {
-        // TODO code application logic here
          //AjouterP(100,"AAAA",50.50,15,"Informatique",1);
         //SupprimerParID(3);
         //recherchePparLibelle("SOURIS11");
@@ -198,48 +193,59 @@ public class ConnexionJM {
            System.err.println(e.getMessage());
        }
    }
+   public List<String> rechercheclasse() throws SQLException{
+       
+       String query="SELECT nom FROM classe "; 
+       cnx=connecterDB();
+       st=cnx.createStatement();
+       rst= st.executeQuery(query);
+      List<String> Classe = new ArrayList<String>();
+       while(rst.next()){
+           Classe.add(rst.getString("nom"));
+       }
+       return Classe;
+ 
+}
     
-   public static void ajouter(String nom, String prenom, String email, String tel, Object mdp) {
-
+   //public static void rdv(String email, String date, String message) {
 	// TODO Auto-generated method stub
+
 
 	// Connexion a la BDD //
 
 	// Gestion d'erreur //
-	if (!email.contains("@")) {
-	jOptionPane1.showMessageDialog(null, "Erreur email non valide", "Alerte", JOptionPane.ERROR_MESSAGE);
-	inscription window = new inscription();
-	window.frame.setVisible(true);
-	}
-	else {
-	try {//V�rification de l'identifiant et du mot de passe de la bdd, execution de la requette //
-	bdd connexion = new bdd();
+	//try {//V�rification de l'identifiant et du mot de passe de la bdd, execution de la requette //
+	//bdd connexion = new bdd();
 
-	Connection cnx = connexion.connexion();
+	//Connection cnx = connexion.connexion();
+	//Statement stmt = cnx.createStatement();
+	//ResultSet rs;
+	//stmt.execute("INSERT INTO rdv (email, date, message)" + "VALUES ('" + email + "', '" + date + "', '"+ message + "')");
 
-	Statement stmt = cnx.createStatement();
-	ResultSet rs;
-	stmt.execute("INSERT INTO compte (nom, prenom, email, tel, mdp, role)" + "VALUES ('" + nom + "', '"+ prenom + "', '" + email + "', '" + tel + "', '" + mdp + "', 'prof')");
-	jOptionPane1.showMessageDialog(null, "Inscription réussie.", "Inscription", JOptionPane.INFORMATION_MESSAGE) ;
-	try {
-	EnvoyerEmail.envoyer(email);
-	} catch (MessagingException e) {
+	//System.out.println("insertion reussie !");//Si la requette s'excute alors on affiche un message //
+	//jOptionPane1.showMessageDialog(null, "Rendez-vous pris avec succées.", "Rendez-vous", JOptionPane.INFORMATION_MESSAGE) ;
+
+	//try {
+	//rdv window = new rdv();
+	//window.frame.setVisible(true);
+	//} catch (Exception e1) {
+	//e1.printStackTrace();
+	//}
+	//cnx.close();
+	//}catch (SQLException e) {
+	//jOptionPane1.showMessageDialog(null, "erreur veuillez réessayer", "Alerte", JOptionPane.ERROR_MESSAGE);
+	//rdv window;
+	//try {
+	//window = new rdv();
+	//window.frame.setVisible(true);
+	//} catch (SQLException e1) {
 	// TODO Auto-generated catch block
-	e.printStackTrace();
-	}
-	connexion window = new connexion();
-	window.frame.setVisible(true);  
-	cnx.close();
-	}catch (SQLException e) {
-	jOptionPane1.showMessageDialog(null, "erreur veuillez réessayer", "Alerte", JOptionPane.ERROR_MESSAGE);
-	inscription window = new inscription();
-	window.frame.setVisible(true);
-	e.printStackTrace();
+	//e1.printStackTrace();
+	//}
+	//e.printStackTrace();
 
-	}
-	}
-	}
-    
+	//}
+	//} 
     
    
     
