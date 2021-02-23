@@ -3,6 +3,7 @@ package View;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 import java.util.List;
 
 import javax.swing.JFrame;
@@ -37,15 +38,17 @@ public class accueil_prof {
 
 	/**
 	 * Create the application.
+	 * @throws SQLException 
 	 */
-	public accueil_prof() {
+	public accueil_prof() throws SQLException {
 		initialize();
 	}
 
 	/**
 	 * Initialize the contents of the frame.
+	 * @throws SQLException 
 	 */
-	private void initialize() {
+	private void initialize() throws SQLException {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -58,7 +61,7 @@ public class accueil_prof {
 		List<String> tabClasse = insert.rechercheclasse();
 
 		for(String s : tabClasse) {
-			comboBox.addItem();
+			comboBox.addItem(s);
 		}
 		;
 		
