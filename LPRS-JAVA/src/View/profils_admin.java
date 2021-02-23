@@ -44,10 +44,20 @@ public class profils_admin {
 		frame.getContentPane().add(lblNewLabel);
 		
 		JButton btnNewButton = new JButton("Ajouter une classe");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Accueil Accueil = new Accueil();
+				Accueil.frame.setVisible(true);
+			}
+		});
 		btnNewButton.setBounds(143, 89, 139, 23);
 		frame.getContentPane().add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Ajouter des \u00E9tudiants");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btnNewButton_1.setBounds(143, 147, 139, 23);
 		frame.getContentPane().add(btnNewButton_1);
 		
