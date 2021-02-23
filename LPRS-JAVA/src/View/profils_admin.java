@@ -46,8 +46,8 @@ public class profils_admin {
 		JButton btnNewButton = new JButton("Ajouter une classe");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Accueil Accueil = new Accueil();
-				Accueil.frame.setVisible(true);
+				Ajoutclasse Ajoutclasse = new Ajoutclasse();
+				Ajoutclasse.frame.setVisible(true);
 			}
 		});
 		btnNewButton.setBounds(143, 89, 139, 23);
@@ -56,6 +56,8 @@ public class profils_admin {
 		JButton btnNewButton_1 = new JButton("Ajouter des \u00E9tudiants");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				AjoutEtudiant Ajoutclasse = new AjoutEtudiant();
+				AjoutEtudiant.frame.setVisible(true);
 			}
 		});
 		btnNewButton_1.setBounds(143, 147, 139, 23);

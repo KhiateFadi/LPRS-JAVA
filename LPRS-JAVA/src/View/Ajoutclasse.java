@@ -12,7 +12,7 @@ import java.awt.event.ActionEvent;
 
 public class Ajoutclasse {
 
-	private JFrame frame;
+	JFrame frame;
 	private JTextField textField;
 	private JTextField textField_1;
 
