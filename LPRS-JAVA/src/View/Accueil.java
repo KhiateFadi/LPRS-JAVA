@@ -81,5 +81,15 @@ public class Accueil {
 		
 		btnNewButton_2.setBounds(310, 229, 116, 23);
 		frame.getContentPane().add(btnNewButton_2);
+		
+		JButton btnNewButton_3 = new JButton("modifier profils");
+		btnNewButton_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				modification modification= new modification();
+				modification.frame.setVisible(true);
+			}
+		});
+		btnNewButton_3.setBounds(10, 229, 116, 23);
+		frame.getContentPane().add(btnNewButton_3);
 	}
 }
