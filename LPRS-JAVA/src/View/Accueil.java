@@ -82,8 +82,6 @@ public class Accueil {
 		btnNewButton_2.setBounds(310, 229, 116, 23);
 		frame.getContentPane().add(btnNewButton_2);
 		
-		});
-		btnNewButton_3.setBounds(10, 229, 116, 23);
-		frame.getContentPane().add(btnNewButton_3);
+		
 	}
 }
