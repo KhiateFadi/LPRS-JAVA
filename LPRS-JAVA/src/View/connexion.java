@@ -1,12 +1,11 @@
 package View;
 
-import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import java.awt.BorderLayout;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 import manager.ConnexionJM;
@@ -60,10 +59,11 @@ public class connexion {
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
 		
-		textField_1 = new JTextField();
+		JPasswordField textField_1 = new JPasswordField();
 		textField_1.setBounds(154, 140, 96, 20);
 		frame.getContentPane().add(textField_1);
 		textField_1.setColumns(10);
+		
 		
 		JButton btnNewButton = new JButton("Valider");
 		btnNewButton.setBounds(154, 199, 96, 23);
@@ -71,10 +71,11 @@ public class connexion {
 
 			public void actionPerformed(ActionEvent arg0) {
 				String mail = textField.getText();
-				String mdp = textField_1.getText();
+				char[] mdp = textField_1.getPassword();
+				String pass = String.copyValueOf(mdp);
 				// TODO Auto-generated method stub
 				ConnexionJM insert = new ConnexionJM();
-				insert.recherche(mail,mdp);
+				insert.recherche(mail,pass);
 			}
 
 			});
