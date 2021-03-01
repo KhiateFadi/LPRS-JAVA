@@ -1,4 +1,4 @@
-package manager;
+ package manager;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -206,6 +206,26 @@ public class ConnexionJM {
        return Classe;
  
 }
+   
+   public void AjouterClasse(String nom,int nb_eleve){
+       try{
+           String query="INSERT INTO classe(nom,nb_eleve) VALUES('"+nom+"','"+nb_eleve+"')";
+           System.out.println(query);
+           cnx=connecterDB();
+           st=cnx.createStatement();
+           st.executeUpdate(query);
+           System.out.println("Bien ajouté");
+           
+       }catch(SQLException e){
+           System.err.println(e.getMessage());
+           
+       }
+   }
+
+
+	// TODO Auto-generated method stub
+	
+}
     
    //public static void rdv(String email, String date, String message) {
 	// TODO Auto-generated method stub
@@ -249,4 +269,4 @@ public class ConnexionJM {
     
    
     
-}
+

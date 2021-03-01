@@ -73,6 +73,15 @@ public class profils_admin {
 		
 		btnNewButton_2.setBounds(143, 203, 139, 23);
 		frame.getContentPane().add(btnNewButton_2);
+		
+		JButton btnNewButton_3 = new JButton("Modifier profils");
+		btnNewButton_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				modification modification = new modification();
+				modification.frame.setVisible(true);
+			}
+		});
+		btnNewButton_3.setBounds(321, 229, 105, 23);
+		frame.getContentPane().add(btnNewButton_3);
 	}
-
 }

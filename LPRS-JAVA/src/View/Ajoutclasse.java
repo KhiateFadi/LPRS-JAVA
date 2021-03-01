@@ -6,6 +6,9 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import java.awt.BorderLayout;
 import javax.swing.JTextField;
+
+import manager.ConnexionJM;
+
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -15,6 +18,9 @@ public class Ajoutclasse {
 	JFrame frame;
 	private JTextField textField;
 	private JTextField textField_1;
+	
+	protected String nom;
+	protected int nb_eleve;
 
 	/**
 	 * Launch the application.
@@ -67,6 +73,9 @@ public class Ajoutclasse {
 			public void actionPerformed(ActionEvent e) {
 				profils_admin profils_admin = new profils_admin();
 				profils_admin.frame.setVisible(true);
+				ConnexionJM insert = new ConnexionJM();
+				insert.AjouterClasse(nom,nb_eleve);
+				
 			}
 		});
 		btnNewButton.setBounds(171, 199, 96, 23);
