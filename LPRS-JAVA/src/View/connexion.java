@@ -22,7 +22,7 @@ public class connexion {
 	 * Launch the application.
 	 */
 	
-			public void run() {
+			public static void run() {
 				try {
 					connexion window = new connexion();
 					window.frame.setVisible(true);

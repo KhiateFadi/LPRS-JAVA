@@ -2,6 +2,9 @@ package View;
 
 import javax.swing.JFrame;
 import javax.swing.JTextField;
+
+import manager.ConnexionJM;
+
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -66,12 +69,20 @@ public class modification {
 		textField_3.setColumns(10);
 		
 		JButton btnNewButton = new JButton("Valider");
+		btnNewButton.setBounds(152, 215, 100, 23);
 		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				profils_admin profils_admin = new profils_admin();
-				profils_admin.frame.setVisible(true);
+
+			public void actionPerformed(ActionEvent arg0) {
+				String nom = textField.getText();
+				String prenom = textField_1.getText();
+				String mail = textField_2.getText();
+				String mdp = textField_3.getText();
+				// TODO Auto-generated method stub
+				ConnexionJM update = new ConnexionJM();
+				update.ModifierUser(nom,prenom,mail,mdp);
 			}
-		});
+
+			});
 		btnNewButton.setBounds(157, 225, 96, 23);
 		frame.getContentPane().add(btnNewButton);
 		

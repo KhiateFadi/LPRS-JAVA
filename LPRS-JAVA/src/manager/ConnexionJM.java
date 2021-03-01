@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import View.accueil_prof;
+import View.connexion;
 import View.profils_admin;
 /**
  *
@@ -94,13 +95,25 @@ public class ConnexionJM {
             st=cnx.createStatement();
             st.executeUpdate(query);
             System.out.println("Bien ajouté");
+            if(rst.next()){
+                System.out.println("Trouve");
+                connexion accueil=new connexion();
+                connexion.run();
+            }else{
+                 System.out.println("pas trouve");
+                
+            }
             
-        }catch(SQLException e){
-            System.err.println(e.getMessage());
-        }
+             
+         }catch(SQLException e){
+             System.out.println(e.getMessage());
+         }
+         
+     }
         
         
-    }
+        
+    
    
     public void SupprimerParID(int id){
         try{
@@ -219,7 +232,25 @@ public class ConnexionJM {
            System.err.println(e.getMessage());
        }
    }
-
+   
+   public void ModifierUser(String nom,String prenom,String mail,String mdp){
+       try{
+           String query="UPDATE utilisateur SET nom='"+nom
+                   +"', prenom="+prenom
+                   +", mail="+mail
+                   +", mdp='"+mdp;
+                  
+           cnx=connecterDB();
+           st=cnx.createStatement();
+           st.executeUpdate(query);
+           System.out.println("Bien modifié");
+           
+       }catch(SQLException e){
+           System.out.println(e.getMessage());
+       }
+       
+       
+   }
 
 
 	// TODO Auto-generated method stub
