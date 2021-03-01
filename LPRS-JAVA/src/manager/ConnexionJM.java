@@ -115,9 +115,9 @@ public class ConnexionJM {
         }
     }
    
-    public void recherche(String mail, String mdp){
+    public void recherche(String mail, String pass){
         try{
-           String query="SELECT * FROM utilisateur WHERE mail='"+mail+"' AND mdp='"+mdp+"'"; 
+           String query="SELECT * FROM utilisateur WHERE mail='"+mail+"' AND mdp='"+pass+"'"; 
            cnx=connecterDB();
            st=cnx.createStatement();
            rst= st.executeQuery(query);
@@ -206,10 +206,9 @@ public class ConnexionJM {
        return Classe;
  
 }
-   
-   public void AjouterClasse(String nom,int nb_eleve){
+   public void AjouterClass(String nom,String nb_eleve){
        try{
-           String query="INSERT INTO classe(nom,nb_eleve) VALUES('"+nom+"','"+nb_eleve+"')";
+           String query="INSERT INTO classe (nom,nb_eleve) VALUES('"+nom+"','"+nb_eleve+"')";
            System.out.println(query);
            cnx=connecterDB();
            st=cnx.createStatement();
@@ -218,9 +217,9 @@ public class ConnexionJM {
            
        }catch(SQLException e){
            System.err.println(e.getMessage());
-           
        }
    }
+
 
 
 	// TODO Auto-generated method stub

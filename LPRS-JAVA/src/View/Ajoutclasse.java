@@ -20,7 +20,7 @@ public class Ajoutclasse {
 	private JTextField textField_1;
 	
 	protected String nom;
-	protected int nb_eleve;
+	protected String nb_eleve;
 
 	/**
 	 * Launch the application.
@@ -71,11 +71,11 @@ public class Ajoutclasse {
 		JButton btnNewButton = new JButton("Valider");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				profils_admin profils_admin = new profils_admin();
-				profils_admin.frame.setVisible(true);
+				String nom = textField.getText();
+				String nb_eleve = textField_1.getText();
+				// TODO Auto-generated method stub
 				ConnexionJM insert = new ConnexionJM();
-				insert.AjouterClasse(nom,nb_eleve);
-				
+				insert.AjouterClass(nom,nb_eleve);
 			}
 		});
 		btnNewButton.setBounds(171, 199, 96, 23);

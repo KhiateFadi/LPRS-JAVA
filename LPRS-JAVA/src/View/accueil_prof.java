@@ -1,6 +1,5 @@
 package View;
 
-import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
@@ -8,23 +7,17 @@ import java.util.List;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import java.awt.BorderLayout;
-import javax.swing.JMenuBar;
-
 import manager.ConnexionJM;
 
-import java.awt.Checkbox;
 import javax.swing.JComboBox;
 import javax.swing.JButton;
 
 public class accueil_prof {
 
 	private JFrame frame;
-
 	/**
 	 * Launch the application.
 	 */
-	
 			public void run() {
 				try {
 					accueil_prof window = new accueil_prof();
@@ -33,9 +26,6 @@ public class accueil_prof {
 					e.printStackTrace();
 				}
 			}
-		
-	
-
 	/**
 	 * Create the application.
 	 * @throws SQLException 
