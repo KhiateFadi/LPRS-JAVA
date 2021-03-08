@@ -53,7 +53,7 @@ public class ConnexionJM {
             System.out.println("Driver oki");
             String url="jdbc:mysql://localhost/gest?serverTimezone=UTC"; 
             String user="root";
-            String password="";
+            String password="" ;
            Connection cnx=DriverManager.getConnection(url,user,password);
             System.out.println("Connexion bien établie");
             return cnx;
@@ -90,7 +90,6 @@ public class ConnexionJM {
             System.err.println(e.getMessage());
         }
     }
-   
     public boolean AjouterP(String nom,String prenom,String mail,String mdp) throws MessagingException{
     	boolean test = false;
         try{

@@ -105,7 +105,13 @@ public class accueil_prof {
 		JButton btnNewButton_3 = new JButton("valider");
 		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				classe classe= new classe();
+				classe classe = null;
+				try {
+					classe = new classe();
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				classe.frame.setVisible(true);
 			}
 		});
