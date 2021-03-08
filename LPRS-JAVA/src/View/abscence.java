@@ -106,6 +106,7 @@ public class abscence {
 				// TODO Auto-generated method stub
 				ConnexionJM insert = new ConnexionJM();
 				insert.AjouterAbs(nom,prenom,classe,date);
+				JOptionPane.showMessageDialog(null, "Abscence bien enregistré !");
 			}
 		});
 		btnNewButton.setBounds(156, 212, 96, 23);

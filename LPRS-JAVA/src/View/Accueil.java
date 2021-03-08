@@ -4,6 +4,7 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -64,6 +65,7 @@ public class Accueil {
 			public void actionPerformed(ActionEvent e) {
 				inscription inscription = new inscription();
 				inscription.frame.setVisible(true);
+				
 
 			}
 		});

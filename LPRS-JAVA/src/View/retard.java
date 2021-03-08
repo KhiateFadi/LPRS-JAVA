@@ -6,6 +6,8 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.BorderLayout;
 import javax.swing.JTextField;
 
@@ -103,6 +105,7 @@ public class retard {
 				// TODO Auto-generated method stub
 				ConnexionJM insert = new ConnexionJM();
 				insert.AjouterRetard(nom,prenom,classe,date);
+				JOptionPane.showMessageDialog(null, "Retard bien enregistré !");
 			}
 		});
 		btnNewButton.setBounds(143, 217, 96, 23);

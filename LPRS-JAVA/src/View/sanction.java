@@ -6,6 +6,8 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.BorderLayout;
 import javax.swing.JTextField;
 
@@ -87,6 +89,7 @@ public class sanction {
 				// TODO Auto-generated method stub
 				ConnexionJM insert = new ConnexionJM();
 				insert.AjouterSanction(nom,prenom,classe,sanction);
+				JOptionPane.showMessageDialog(null, "Sanction bien enregistré !");
 			}
 		});
 		btnNewButton.setBounds(163, 217, 96, 23);

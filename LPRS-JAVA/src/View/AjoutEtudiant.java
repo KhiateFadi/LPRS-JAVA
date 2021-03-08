@@ -4,6 +4,8 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.BorderLayout;
 import javax.swing.JTextField;
 import javax.swing.JButton;
@@ -95,6 +97,7 @@ public class AjoutEtudiant {
 			public void actionPerformed(ActionEvent e) {
 				profils_admin profils_admin = new profils_admin();
 				profils_admin.frame.setVisible(true);
+				JOptionPane.showMessageDialog(null, "Etudiant enregistré avec succès !");
 			}
 		});
 		btnNewButton.setBounds(159, 224, 96, 23);

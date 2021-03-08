@@ -4,6 +4,8 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.BorderLayout;
 import javax.swing.JTextField;
 
@@ -76,6 +78,7 @@ public class Ajoutclasse {
 				// TODO Auto-generated method stub
 				ConnexionJM insert = new ConnexionJM();
 				insert.AjouterClass(nom,nb_eleve);
+				JOptionPane.showMessageDialog(null, "Classe bien ajouté !");
 			}
 		});
 		btnNewButton.setBounds(171, 199, 96, 23);
@@ -88,5 +91,5 @@ public class Ajoutclasse {
 		JLabel lblNewLabel_2 = new JLabel("Nombre d'el\u00E8ve");
 		lblNewLabel_2.setBounds(28, 139, 77, 14);
 		frame.getContentPane().add(lblNewLabel_2);
-	}
+	} 
 }

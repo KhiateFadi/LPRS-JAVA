@@ -4,6 +4,8 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.BorderLayout;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -34,6 +36,7 @@ public class profils_admin {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		JOptionPane.showMessageDialog(null, "Vous êtes bien connecté !");
 		frame = new JFrame();
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
