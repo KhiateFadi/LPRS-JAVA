@@ -17,7 +17,7 @@ import manager.ConnexionJM;
 
 public class classe {
 
-	JFrame frame;
+	static JFrame frame;
 	private JTextField textField;
 
 	/**
@@ -75,7 +75,7 @@ public class classe {
 				abscence.frame.setVisible(true);
 			}
 		});
-		btnNewButton.setBounds(20, 229, 102, 23);
+		btnNewButton.setBounds(113, 229, 102, 23);
 		frame.getContentPane().add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("retard");
@@ -86,7 +86,7 @@ public class classe {
 			}
 			
 		});
-		btnNewButton_1.setBounds(170, 229, 89, 23);
+		btnNewButton_1.setBounds(238, 229, 89, 23);
 		frame.getContentPane().add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("sanction");
@@ -96,12 +96,29 @@ public class classe {
 				sanction.frame.setVisible(true);
 			}
 		});
-		btnNewButton_2.setBounds(315, 229, 89, 23);
+		btnNewButton_2.setBounds(337, 229, 89, 23);
 		frame.getContentPane().add(btnNewButton_2);
 		
 		textField = new JTextField();
 		textField.setBounds(20, 63, 384, 155);
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
+		
+		JButton btnNewButton_3 = new JButton("Retour");
+		btnNewButton_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				accueil_prof accueil_prof = null;
+				try {
+					accueil_prof = new accueil_prof();
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				accueil_prof.frame.setVisible(true);
+				classe.frame.setVisible(false);
+			}
+		});
+		btnNewButton_3.setBounds(10, 229, 89, 23);
+		frame.getContentPane().add(btnNewButton_3);
 	}
 }

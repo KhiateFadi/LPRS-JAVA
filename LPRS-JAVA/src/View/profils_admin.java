@@ -66,7 +66,7 @@ public class profils_admin {
 		btnNewButton_1.setBounds(143, 147, 139, 23);
 		frame.getContentPane().add(btnNewButton_1);
 		
-		JButton btnNewButton_2 = new JButton("D\u00E9connection");
+		JButton btnNewButton_2 = new JButton("D\u00E9connexion");
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Accueil Accueil = new Accueil();

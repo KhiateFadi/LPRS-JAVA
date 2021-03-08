@@ -117,6 +117,16 @@ public class inscription {
 
 			});
 		frame.getContentPane().add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("Retour");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Accueil Accueil= new Accueil();
+				Accueil.frame.setVisible(true);
+			}
+		});
+		btnNewButton_1.setBounds(6, 240, 89, 23);
+		frame.getContentPane().add(btnNewButton_1);
 	}
 
 }

@@ -17,7 +17,7 @@ import java.awt.event.ActionEvent;
 
 public class Ajoutclasse {
 
-	JFrame frame;
+	static JFrame frame;
 	private JTextField textField;
 	private JTextField textField_1;
 	
@@ -79,6 +79,7 @@ public class Ajoutclasse {
 				ConnexionJM insert = new ConnexionJM();
 				insert.AjouterClass(nom,nb_eleve);
 				JOptionPane.showMessageDialog(null, "Classe bien ajouté !");
+				Ajoutclasse.frame.setVisible(false);
 			}
 		});
 		btnNewButton.setBounds(171, 199, 96, 23);
@@ -91,5 +92,17 @@ public class Ajoutclasse {
 		JLabel lblNewLabel_2 = new JLabel("Nombre d'el\u00E8ve");
 		lblNewLabel_2.setBounds(28, 139, 77, 14);
 		frame.getContentPane().add(lblNewLabel_2);
+		
+		JButton btnNewButton_1 = new JButton("Retour");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				profils_admin profils_admin= new profils_admin();
+				profils_admin.frame.setVisible(true);
+				Ajoutclasse.frame.setVisible(false);
+				
+			}
+		});
+		btnNewButton_1.setBounds(10, 229, 89, 23);
+		frame.getContentPane().add(btnNewButton_1);
 	} 
 }

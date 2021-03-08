@@ -46,7 +46,7 @@ public class connexion {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
+		frame.setBounds(100, 100, 435, 311);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
@@ -88,5 +88,15 @@ public class connexion {
 		JLabel lblNewLabel_2 = new JLabel("Mots de passe");
 		lblNewLabel_2.setBounds(54, 143, 71, 14);
 		frame.getContentPane().add(lblNewLabel_2);
+		
+		JButton btnNewButton_1 = new JButton("Retour");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Accueil Accueil= new Accueil();
+				Accueil.frame.setVisible(true);
+			}
+		});
+		btnNewButton_1.setBounds(10, 240, 89, 23);
+		frame.getContentPane().add(btnNewButton_1);
 	}
 }

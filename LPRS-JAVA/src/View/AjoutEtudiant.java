@@ -102,6 +102,17 @@ public class AjoutEtudiant {
 		});
 		btnNewButton.setBounds(159, 224, 96, 23);
 		frame.getContentPane().add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("Retour");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				profils_admin profils_admin= new profils_admin();
+				profils_admin.frame.setVisible(true);
+				AjoutEtudiant.frame.setVisible(false);
+			}
+		});
+		btnNewButton_1.setBounds(4, 240, 89, 23);
+		frame.getContentPane().add(btnNewButton_1);
 	}
 
 }

@@ -12,7 +12,7 @@ import javax.swing.JLabel;
 
 public class modification {
 
-	JFrame frame;
+	static JFrame frame;
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
@@ -80,6 +80,7 @@ public class modification {
 				// TODO Auto-generated method stub
 				ConnexionJM update = new ConnexionJM();
 				update.ModifierUser(nom,prenom,mail,mdp);
+				modification.frame.setVisible(false);
 			}
 
 			});
@@ -105,5 +106,16 @@ public class modification {
 		JLabel lblNewLabel_4 = new JLabel("Modification du profils");
 		lblNewLabel_4.setBounds(149, 18, 116, 14);
 		frame.getContentPane().add(lblNewLabel_4);
+		
+		JButton btnNewButton_1 = new JButton("Retour");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				profils_admin profils_admin= new profils_admin();
+				profils_admin.frame.setVisible(true);
+				modification.frame.setVisible(false);
+			}
+		});
+		btnNewButton_1.setBounds(10, 229, 89, 23);
+		frame.getContentPane().add(btnNewButton_1);
 	}
 }

@@ -11,7 +11,7 @@ import java.awt.event.ActionEvent;
 
 public class Accueil {
 
-	JFrame frame;
+	static JFrame frame;
 	/**
 	 * Launch the application.
 	 */
@@ -53,6 +53,7 @@ public class Accueil {
 			public void actionPerformed(ActionEvent e) {
 				connexion connexion = new connexion();
 				connexion.frame.setVisible(true);
+				Accueil.frame.setVisible(false);
 				
 			}
 		});
@@ -65,6 +66,7 @@ public class Accueil {
 			public void actionPerformed(ActionEvent e) {
 				inscription inscription = new inscription();
 				inscription.frame.setVisible(true);
+				Accueil.frame.setVisible(false);
 				
 
 			}
@@ -77,6 +79,7 @@ public class Accueil {
 			public void actionPerformed(ActionEvent e) {
 				profils_admin0 profils_admin0=new profils_admin0();
 				profils_admin0.run();
+				Accueil.frame.setVisible(false);
 			
 			}
 		});

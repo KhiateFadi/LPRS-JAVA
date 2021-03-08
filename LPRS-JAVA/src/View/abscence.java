@@ -7,6 +7,7 @@ import javax.swing.JLabel;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.sql.Date;
+import java.sql.SQLException;
 import java.awt.event.ActionEvent;
 import java.awt.BorderLayout;
 import javax.swing.JTextField;
@@ -18,7 +19,7 @@ import javax.swing.JOptionPane;
 public class abscence {
 
 	protected static final String JOptionPanel = null;
-	JFrame frame;
+	static JFrame frame;
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
@@ -107,9 +108,27 @@ public class abscence {
 				ConnexionJM insert = new ConnexionJM();
 				insert.AjouterAbs(nom,prenom,classe,date);
 				JOptionPane.showMessageDialog(null, "Abscence bien enregistré !");
+				
 			}
 		});
 		btnNewButton.setBounds(156, 212, 96, 23);
 		frame.getContentPane().add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("Retour");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				classe classe = null;
+				try {
+					classe = new classe();
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				classe.frame.setVisible(true);
+				abscence.frame.setVisible(false);
+			}
+		});
+		btnNewButton_1.setBounds(6, 229, 89, 23);
+		frame.getContentPane().add(btnNewButton_1);
 	}
 }

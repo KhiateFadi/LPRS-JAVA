@@ -3,6 +3,7 @@ package View;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -17,7 +18,7 @@ import javax.swing.JButton;
 
 public class sanction {
 
-	JFrame frame;
+	static JFrame frame;
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
@@ -110,6 +111,24 @@ public class sanction {
 		JLabel lblNewLabel_4 = new JLabel("Sanction");
 		lblNewLabel_4.setBounds(50, 184, 49, 14);
 		frame.getContentPane().add(lblNewLabel_4);
+		
+		JButton btnNewButton_1 = new JButton("Retour");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				classe classe = null;
+				try {
+					classe = new classe();
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				classe.frame.setVisible(true);
+				sanction.frame.setVisible(false);
+				
+			}
+		});
+		btnNewButton_1.setBounds(10, 229, 89, 23);
+		frame.getContentPane().add(btnNewButton_1);
 	}
 
 }

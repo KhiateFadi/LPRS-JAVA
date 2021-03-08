@@ -20,7 +20,7 @@ import javax.swing.JButton;
 
 public class accueil_prof {
 
-	private JFrame frame;
+	static JFrame frame;
 
 	/**
 	 * Launch the application.
@@ -70,6 +70,7 @@ public class accueil_prof {
 			public void actionPerformed(ActionEvent e) {
 				planning planning= new planning();
 				planning.frame.setVisible(true);
+				accueil_prof.frame.setVisible(false);
 			}
 		});
 		btnNewButton.setBounds(154, 120, 107, 23);
@@ -82,6 +83,7 @@ public class accueil_prof {
 			public void actionPerformed(ActionEvent e) {
 				rdv rdv= new rdv();
 				rdv.frame.setVisible(true);
+				accueil_prof.frame.setVisible(false);
 			}
 		});
 		btnNewButton_1.setBounds(154, 172, 107, 23);
@@ -97,6 +99,7 @@ public class accueil_prof {
 			public void actionPerformed(ActionEvent e) {
 				modification modification= new modification();
 				modification.frame.setVisible(true);
+				accueil_prof.frame.setVisible(false);
 			}
 		});
 		btnNewButton_2.setBounds(293, 229, 118, 23);
@@ -113,6 +116,7 @@ public class accueil_prof {
 					e1.printStackTrace();
 				}
 				classe.frame.setVisible(true);
+				accueil_prof.frame.setVisible(false);
 			}
 		});
 		btnNewButton_3.setBounds(309, 67, 89, 23);
