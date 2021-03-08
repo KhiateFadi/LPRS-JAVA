@@ -13,6 +13,7 @@ import javax.swing.JTextField;
 
 import manager.ConnexionJM;
 
+import javax.mail.MessagingException;
 import javax.swing.JButton;
 
 public class inscription {
@@ -103,7 +104,15 @@ public class inscription {
 				String mdp = textField_3.getText();
 				// TODO Auto-generated method stub
 				ConnexionJM insert = new ConnexionJM();
-				insert.AjouterP(nom,prenom,mail,mdp);
+				boolean test = false;
+				try {
+					test = insert.AjouterP(nom,prenom,mail,mdp);
+				} catch (MessagingException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				if(test == true)
+					frame.setVisible(false);
 			}
 
 			});

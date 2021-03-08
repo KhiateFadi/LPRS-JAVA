@@ -3,9 +3,13 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.mail.MessagingException;
+
+import View.Accueil;
 import View.accueil_prof;
 import View.connexion;
 import View.profils_admin;
+import mail.EnvoyerEmail;
 /**
  *
  * @author Said
@@ -87,7 +91,8 @@ public class ConnexionJM {
         }
     }
    
-    public void AjouterP(String nom,String prenom,String mail,String mdp){
+    public boolean AjouterP(String nom,String prenom,String mail,String mdp) throws MessagingException{
+    	boolean test = false;
         try{
             String query="INSERT INTO utilisateur(nom,prenom,mail,mdp) VALUES('"+nom+"','"+prenom+"','"+mail+"','"+mdp+"')";
             System.out.println(query);
@@ -95,20 +100,13 @@ public class ConnexionJM {
             st=cnx.createStatement();
             st.executeUpdate(query);
             System.out.println("Bien ajouté");
-            if(rst.next()){
-                System.out.println("Trouve");
-                connexion accueil=new connexion();
-                connexion.run();
-            }else{
-                 System.out.println("pas trouve");
-                
-            }
-            
-             
+            test = true;
+            String text = "Bienvenue ! ";
+			EnvoyerEmail.envoyer(mail, text);
          }catch(SQLException e){
              System.out.println(e.getMessage());
          }
-         
+         return test;
      }
         
         
@@ -251,6 +249,21 @@ public class ConnexionJM {
        
        
    }
+
+public List<String> rechercheEtudiant() throws SQLException{
+       
+       String query="SELECT nom FROM utilisateur "; 
+       cnx=connecterDB();
+       st=cnx.createStatement();
+       rst= st.executeQuery(query);
+      List<String> Classe = new ArrayList<String>();
+       while(rst.next()){
+           Classe.add(rst.getString("nom"));
+       }
+       return Classe;
+ 
+}
+
 
 
 	// TODO Auto-generated method stub

@@ -5,12 +5,20 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
+
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
+import java.util.List;
 import java.awt.event.ActionEvent;
+import javax.swing.JTextField;
+
+import manager.ConnexionJM;
 
 public class classe {
 
-	private JFrame frame;
+	JFrame frame;
+	private JTextField textField;
 
 	/**
 	 * Launch the application.
@@ -30,22 +38,34 @@ public class classe {
 
 	/**
 	 * Create the application.
+	 * @throws SQLException 
 	 */
-	public classe() {
+	public classe() throws SQLException {
 		initialize();
 	}
 
 	/**
 	 * Initialize the contents of the frame.
+	 * @throws SQLException 
 	 */
-	private void initialize() {
+	private void initialize() throws SQLException {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
+		JComboBox<String> comboBox = new JComboBox<String>();
+		comboBox.setBounds(154, 67, 107, 22);
+		frame.getContentPane().add(comboBox);
+		ConnexionJM insert = new ConnexionJM();
+		List<String> tabClasse = insert.rechercheEtudiant();
+
+		for(String s : tabClasse) {
+			comboBox.addItem(s);
+		}
+		;
 		
 		JLabel lblNewLabel = new JLabel("classe");
-		lblNewLabel.setBounds(169, 26, 49, 14);
+		lblNewLabel.setBounds(169, 26, 79, 14);
 		frame.getContentPane().add(lblNewLabel);
 		
 		JButton btnNewButton = new JButton("abscence");
@@ -78,6 +98,10 @@ public class classe {
 		});
 		btnNewButton_2.setBounds(315, 229, 89, 23);
 		frame.getContentPane().add(btnNewButton_2);
+		
+		textField = new JTextField();
+		textField.setBounds(20, 63, 384, 155);
+		frame.getContentPane().add(textField);
+		textField.setColumns(10);
 	}
-
 }
