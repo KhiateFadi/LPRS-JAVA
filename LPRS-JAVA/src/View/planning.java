@@ -6,12 +6,25 @@ import javax.swing.JFrame;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import java.awt.event.ActionListener;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.awt.event.ActionEvent;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.ListSelectionModel;
+import javax.swing.table.DefaultTableModel;
+
+import com.mysql.cj.xdevapi.Statement;
+import com.sun.jdi.connect.spi.Connection;
+
+import manager.BDD;
+import manager.ConnexionJM;
 
 public class planning {
 
 	JFrame frame;
+	private JTable table;
 
 	/**
 	 * Launch the application.
@@ -64,5 +77,51 @@ public class planning {
 		JLabel lblNewLabel = new JLabel("Planning");
 		lblNewLabel.setBounds(179, 24, 62, 14);
 		frame.getContentPane().add(lblNewLabel);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(31, 54, 362, 152);
+		frame.getContentPane().add(scrollPane);
+		
+		table = new JTable();
+		scrollPane.setViewportView(table);
+		ListSelectionModel listMod =  table.getSelectionModel();
+		listMod.addListSelectionListener(table);
+		
+		try{
+			ConnexionJM connexion = new ConnexionJM();
+
+		java.sql.Connection cnx1 = connexion.connecterDB();
+		java.sql.Statement stmt1 = cnx1.createStatement();
+		      ResultSet rs1;
+		rs1 = stmt1.executeQuery("Select * from planning");
+
+		            int i=0;
+		            int k=0;
+		            if(rs1.next()){
+		                rs1.last();
+		                k=rs1.getRow();
+		                rs1.beforeFirst();
+		            }
+		           Object[][] t=new Object[k][6];
+		           // met le resultat de la requete dans un tableau
+		            while (rs1.next()){
+		               
+		               t[i][0]=rs1.getString(2);
+		               t[i][1]=rs1.getString(3);
+		               t[i][2]=rs1.getString(4);
+		               t[i][3]=rs1.getString(5);
+		                i++;
+		            }
+		           
+		            rs1.close();
+		            // affiche le tableau dans le jtable
+		     final String columnNames[] = {"nom_prof","lundi","mardi","mercredi","jeudi","vendredi"};
+		     listMod.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		     table.setModel(new DefaultTableModel(t,columnNames));  
+		     
+		}
+		catch(Exception ex){
+		    ex.printStackTrace();
+		}
 	}
 }

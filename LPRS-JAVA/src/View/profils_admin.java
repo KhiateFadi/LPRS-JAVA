@@ -59,7 +59,7 @@ public class profils_admin {
 		JButton btnNewButton_1 = new JButton("Ajouter des \u00E9tudiants");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				AjoutEtudiant Ajoutclasse = new AjoutEtudiant();
+				AjoutEtudiant AjoutEtudiant = new AjoutEtudiant();
 				AjoutEtudiant.frame.setVisible(true);
 			}
 		});
