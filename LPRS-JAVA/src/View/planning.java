@@ -89,9 +89,10 @@ public class planning {
 		
 		try{
 			ConnexionJM connexion = new ConnexionJM();
+			connexion.connecterDB();			
 
-		java.sql.Connection cnx1 = connexion.connecterDB();
-		java.sql.Statement stmt1 = cnx1.createStatement();
+		java.sql.Connection cnx = connexion.connecterDB();
+		java.sql.Statement stmt1 = cnx.createStatement();
 		      ResultSet rs1;
 		rs1 = stmt1.executeQuery("Select * from planning");
 
@@ -110,14 +111,16 @@ public class planning {
 		               t[i][1]=rs1.getString(3);
 		               t[i][2]=rs1.getString(4);
 		               t[i][3]=rs1.getString(5);
-		                i++;
+		               i++;
+		               System.out.print(i);
 		            }
 		           
 		            rs1.close();
 		            // affiche le tableau dans le jtable
 		     final String columnNames[] = {"nom_prof","lundi","mardi","mercredi","jeudi","vendredi"};
 		     listMod.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-		     table.setModel(new DefaultTableModel(t,columnNames));  
+		     table.setModel(new DefaultTableModel(t,columnNames));
+		     
 		     
 		}
 		catch(Exception ex){
