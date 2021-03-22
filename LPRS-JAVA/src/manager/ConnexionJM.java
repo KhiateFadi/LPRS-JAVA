@@ -108,7 +108,21 @@ public class ConnexionJM {
          return test;
      }
         
-        
+    public boolean AjouterETUD(String nom,String prenom,String mail,String mdp,String classe) throws MessagingException{
+    	boolean test = false;
+        try{
+            String query="INSERT INTO etudiant(nom,prenom,mail,mdp,classe) VALUES('"+nom+"','"+prenom+"','"+mail+"','"+mdp+"','"+classe+"')";
+            System.out.println(query);
+            cnx=connecterDB();
+            st=cnx.createStatement();
+            st.executeUpdate(query);
+            System.out.println("Bien ajouté");
+         }catch(SQLException e){
+             System.out.println(e.getMessage());
+         }
+		return test;
+         
+     }
         
     
    

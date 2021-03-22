@@ -53,7 +53,7 @@ public class profils_admin {
 				Ajoutclasse.frame.setVisible(true);
 			}
 		});
-		btnNewButton.setBounds(143, 89, 139, 23);
+		btnNewButton.setBounds(143, 57, 139, 23);
 		frame.getContentPane().add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Ajouter des \u00E9tudiants");
@@ -86,5 +86,15 @@ public class profils_admin {
 		});
 		btnNewButton_3.setBounds(321, 229, 105, 23);
 		frame.getContentPane().add(btnNewButton_3);
+		
+		JButton btnNewButton_4 = new JButton("Ajouter un prof");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Ajoutclasse Ajoutclasse = new Ajoutclasse();
+				Ajoutclasse.frame.setVisible(true);
+			}
+		});
+		btnNewButton_4.setBounds(143, 102, 139, 23);
+		frame.getContentPane().add(btnNewButton_4);
 	}
 }
