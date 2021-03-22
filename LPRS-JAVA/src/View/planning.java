@@ -92,7 +92,9 @@ public class planning {
 			connexion.connecterDB();			
 
 		java.sql.Connection cnx = connexion.connecterDB();
-		java.sql.Statement stmt1 = cnx.createStatement();
+		java.sql.Statement stmt1 = cnx.createStatement(
+                ResultSet.TYPE_SCROLL_INSENSITIVE,
+                ResultSet.CONCUR_UPDATABLE);
 		      ResultSet rs1;
 		rs1 = stmt1.executeQuery("Select * from planning");
 

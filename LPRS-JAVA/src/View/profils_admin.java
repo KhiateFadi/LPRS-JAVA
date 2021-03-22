@@ -63,7 +63,7 @@ public class profils_admin {
 				AjoutEtudiant.frame.setVisible(true);
 			}
 		});
-		btnNewButton_1.setBounds(143, 147, 139, 23);
+		btnNewButton_1.setBounds(143, 125, 139, 23);
 		frame.getContentPane().add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("D\u00E9connexion");
@@ -74,7 +74,7 @@ public class profils_admin {
 			}
 		});
 		
-		btnNewButton_2.setBounds(143, 203, 139, 23);
+		btnNewButton_2.setBounds(143, 197, 139, 23);
 		frame.getContentPane().add(btnNewButton_2);
 		
 		JButton btnNewButton_3 = new JButton("Modifier profils");
@@ -90,11 +90,22 @@ public class profils_admin {
 		JButton btnNewButton_4 = new JButton("Ajouter un prof");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Ajoutclasse Ajoutclasse = new Ajoutclasse();
-				Ajoutclasse.frame.setVisible(true);
+				AjoutProf AjoutProf = new AjoutProf();
+				AjoutProf.frame.setVisible(true);
 			}
 		});
-		btnNewButton_4.setBounds(143, 102, 139, 23);
+		btnNewButton_4.setBounds(143, 91, 139, 23);
 		frame.getContentPane().add(btnNewButton_4);
+		
+		JButton btnNewButton_5 = new JButton("Ajouter admin");
+		btnNewButton_5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				AjoutAdmin AjoutAdmin = new AjoutAdmin();
+				AjoutAdmin.frame.setVisible(true);
+				
+			}
+		});
+		btnNewButton_5.setBounds(143, 161, 139, 23);
+		frame.getContentPane().add(btnNewButton_5);
 	}
 }
