@@ -107,5 +107,15 @@ public class profils_admin {
 		});
 		btnNewButton_5.setBounds(143, 161, 139, 23);
 		frame.getContentPane().add(btnNewButton_5);
+		
+		JButton btnNewButton_6 = new JButton("Afficher les utilisateurs");
+		btnNewButton_6.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Afficher_User Afficher_User = new Afficher_User();
+				Afficher_User.frame.setVisible(true);
+			}
+		});
+		btnNewButton_6.setBounds(10, 229, 160, 23);
+		frame.getContentPane().add(btnNewButton_6);
 	}
 }

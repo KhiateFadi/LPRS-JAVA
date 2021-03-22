@@ -113,8 +113,10 @@ public class planning {
 		               t[i][1]=rs1.getString(3);
 		               t[i][2]=rs1.getString(4);
 		               t[i][3]=rs1.getString(5);
+		               t[i][4]=rs1.getString(6);
+		               t[i][5]=rs1.getString(7);
 		               i++;
-		               System.out.print(i);
+		               
 		            }
 		           
 		            rs1.close();

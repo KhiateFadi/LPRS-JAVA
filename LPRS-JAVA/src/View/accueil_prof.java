@@ -52,15 +52,7 @@ public class accueil_prof {
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-		JComboBox<String> comboBox = new JComboBox<String>();
-		comboBox.setBounds(154, 67, 107, 22);
-		frame.getContentPane().add(comboBox);
-		ConnexionJM insert = new ConnexionJM();
-		List<String> tabClasse = insert.rechercheclasse();
-
-		for(String s : tabClasse) {
-			comboBox.addItem(s);
-		}
+		
 		;
 		JLabel lblNewLabel = new JLabel("classe ");
 		lblNewLabel.setBounds(26, 71, 49, 14);
@@ -119,7 +111,7 @@ public class accueil_prof {
 				accueil_prof.frame.setVisible(false);
 			}
 		});
-		btnNewButton_3.setBounds(309, 67, 89, 23);
+		btnNewButton_3.setBounds(154, 67, 107, 23);
 		frame.getContentPane().add(btnNewButton_3);
 	}
 }

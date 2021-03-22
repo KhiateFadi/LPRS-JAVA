@@ -3,27 +3,28 @@ package View;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
 import javax.swing.JButton;
-import javax.swing.JComboBox;
-
+import javax.swing.JLabel;
 import java.awt.event.ActionListener;
+import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.List;
 import java.awt.event.ActionEvent;
-import javax.swing.JTextField;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 import javax.swing.ListSelectionModel;
 import javax.swing.table.DefaultTableModel;
 
+import com.mysql.cj.xdevapi.Statement;
+import com.sun.jdi.connect.spi.Connection;
+
+import manager.BDD;
 import manager.ConnexionJM;
 
-public class classe {
+public class Afficher_User {
 
-	static JFrame frame;
-	private JTextField textField;
+	JFrame frame;
+	private JTable table;
 
 	/**
 	 * Launch the application.
@@ -32,7 +33,7 @@ public class classe {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					classe window = new classe();
+					Afficher_User window = new Afficher_User();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -43,37 +44,22 @@ public class classe {
 
 	/**
 	 * Create the application.
-	 * @throws SQLException 
 	 */
-	public classe() throws SQLException {
+	public Afficher_User() {
 		initialize();
-	
 	}
+
 	/**
 	 * Initialize the contents of the frame.
-	 * @throws SQLException 
 	 */
-	public void initialize() throws SQLException {
+	private void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("classe");
-		lblNewLabel.setBounds(169, 26, 79, 14);
-		frame.getContentPane().add(lblNewLabel);
-		
-		JButton btnNewButton = new JButton("abscence");
+		JButton btnNewButton = new JButton("Retour");
 		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				abscence abscence=new abscence();
-				abscence.frame.setVisible(true);
-			}
-		});
-	
-		
-		JButton btnNewButton_3 = new JButton("Retour");
-		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				accueil_prof accueil_prof = null;
 				try {
@@ -83,22 +69,20 @@ public class classe {
 					e1.printStackTrace();
 				}
 				accueil_prof.frame.setVisible(true);
-				classe.frame.setVisible(false);
 			}
 		});
-		
-		
-	
-		
 		btnNewButton.setBounds(10, 229, 89, 23);
 		frame.getContentPane().add(btnNewButton);
 		
+		JLabel lblNewLabel = new JLabel("Affichage des utilisateurs");
+		lblNewLabel.setBounds(179, 24, 125, 14);
+		frame.getContentPane().add(lblNewLabel);
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(31, 54, 362, 152);
 		frame.getContentPane().add(scrollPane);
 		
-		JTable table = new JTable();
+		table = new JTable();
 		scrollPane.setViewportView(table);
 		ListSelectionModel listMod =  table.getSelectionModel();
 		listMod.addListSelectionListener(table);
@@ -109,56 +93,34 @@ public class classe {
 
 		java.sql.Connection cnx = connexion.connecterDB();
 		java.sql.Statement stmt1 = cnx.createStatement(
-		 ResultSet.TYPE_SCROLL_INSENSITIVE,
-         ResultSet.CONCUR_UPDATABLE);
-	     ResultSet rs1;
-		
-	     rs1 = stmt1.executeQuery("Select * from classe");
-       
-		int i=0;
-        int k=0;
-        if(rs1.next()){
-            rs1.last();
-            k=rs1.getRow();
-            rs1.beforeFirst();
-        }
+                ResultSet.TYPE_SCROLL_INSENSITIVE,
+                ResultSet.CONCUR_UPDATABLE);
+		      ResultSet rs1;
+		rs1 = stmt1.executeQuery("Select * from utilisateur");
+
+		            int i=0;
+		            int k=0;
+		            if(rs1.next()){
+		                rs1.last();
+		                k=rs1.getRow();
+		                rs1.beforeFirst();
+		            }
 		           Object[][] t=new Object[k][6];
 		           // met le resultat de la requete dans un tableau
 		            while (rs1.next()){
 		               
 		               t[i][0]=rs1.getString(2);
 		               t[i][1]=rs1.getString(3);
+		               t[i][2]=rs1.getString(4);
 		               i++;
-		            
+		               
 		            }
 		           
 		            rs1.close();
 		            // affiche le tableau dans le jtable
-		     final String columnNames[] = {"nom","nb_eleve"};
+		     final String columnNames[] = {"nom","prenom","mail"};
 		     listMod.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		     table.setModel(new DefaultTableModel(t,columnNames));
-		     
-		     JButton btnNewButton_5 = new JButton("retard");
-				btnNewButton_5.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						retard retard=new retard();
-						retard.frame.setVisible(true);
-					}
-					
-				});
-		     btnNewButton_5.setBounds(221, 229, 89, 23);
-		     frame.getContentPane().add(btnNewButton_5);
-		     
-		     JButton btnNewButton_6 = new JButton("sanction");
-				btnNewButton_6.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						sanction sanction=new sanction();
-						sanction.frame.setVisible(true);
-					}
-				});
-		     
-		     btnNewButton_6.setBounds(122, 229, 89, 23);
-		     frame.getContentPane().add(btnNewButton_6);
 		     
 		     
 		}
