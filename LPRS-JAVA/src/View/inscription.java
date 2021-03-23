@@ -58,11 +58,11 @@ public class inscription {
 		
 		JLabel lblNewLabel = new JLabel("Inscription");
 		lblNewLabel.setForeground(new Color(255, 255, 255));
-		lblNewLabel.setBounds(163, 25, 75, 14);
+		lblNewLabel.setBounds(177, 25, 75, 14);
 		frame.getContentPane().add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Nom");
-		lblNewLabel_1.setForeground(new Color(0, 0, 0));
+		lblNewLabel_1.setForeground(new Color(255, 255, 255));
 		lblNewLabel_1.setBounds(46, 53, 49, 14);
 		frame.getContentPane().add(lblNewLabel_1);
 		
@@ -72,14 +72,17 @@ public class inscription {
 		textField.setColumns(10);
 		
 		JLabel lblNewLabel_2 = new JLabel("Prenom");
+		lblNewLabel_2.setForeground(new Color(255, 255, 255));
 		lblNewLabel_2.setBounds(46, 96, 49, 14);
 		frame.getContentPane().add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("mail");
+		lblNewLabel_3.setForeground(new Color(255, 255, 255));
 		lblNewLabel_3.setBounds(46, 138, 49, 14);
 		frame.getContentPane().add(lblNewLabel_3);
 		
 		JLabel lblNewLabel_4 = new JLabel("Mots de passe");
+		lblNewLabel_4.setForeground(new Color(255, 255, 255));
 		lblNewLabel_4.setBounds(46, 183, 89, 14);
 		frame.getContentPane().add(lblNewLabel_4);
 		

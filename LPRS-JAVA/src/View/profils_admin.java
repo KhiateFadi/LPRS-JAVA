@@ -10,6 +10,7 @@ import java.awt.BorderLayout;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Color;
 
 public class profils_admin {
 
@@ -38,12 +39,14 @@ public class profils_admin {
 	private void initialize() {
 		JOptionPane.showMessageDialog(null, "Vous êtes bien connecté !");
 		frame = new JFrame();
+		frame.getContentPane().setBackground(new Color(0, 139, 139));
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Profils admin");
-		lblNewLabel.setBounds(172, 32, 76, 14);
+		lblNewLabel.setForeground(new Color(255, 255, 255));
+		lblNewLabel.setBounds(192, 29, 98, 14);
 		frame.getContentPane().add(lblNewLabel);
 		
 		JButton btnNewButton = new JButton("Ajouter une classe");
@@ -53,7 +56,7 @@ public class profils_admin {
 				Ajoutclasse.frame.setVisible(true);
 			}
 		});
-		btnNewButton.setBounds(143, 57, 139, 23);
+		btnNewButton.setBounds(143, 57, 165, 23);
 		frame.getContentPane().add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Ajouter des \u00E9tudiants");
@@ -63,7 +66,7 @@ public class profils_admin {
 				AjoutEtudiant.frame.setVisible(true);
 			}
 		});
-		btnNewButton_1.setBounds(143, 125, 139, 23);
+		btnNewButton_1.setBounds(143, 125, 165, 23);
 		frame.getContentPane().add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("D\u00E9connexion");
@@ -74,7 +77,7 @@ public class profils_admin {
 			}
 		});
 		
-		btnNewButton_2.setBounds(143, 197, 139, 23);
+		btnNewButton_2.setBounds(143, 197, 165, 23);
 		frame.getContentPane().add(btnNewButton_2);
 		
 		JButton btnNewButton_3 = new JButton("Modifier profils");
@@ -84,7 +87,7 @@ public class profils_admin {
 				modification.frame.setVisible(true);
 			}
 		});
-		btnNewButton_3.setBounds(321, 229, 105, 23);
+		btnNewButton_3.setBounds(276, 229, 150, 23);
 		frame.getContentPane().add(btnNewButton_3);
 		
 		JButton btnNewButton_4 = new JButton("Ajouter un prof");
@@ -94,7 +97,7 @@ public class profils_admin {
 				AjoutProf.frame.setVisible(true);
 			}
 		});
-		btnNewButton_4.setBounds(143, 91, 139, 23);
+		btnNewButton_4.setBounds(143, 91, 165, 23);
 		frame.getContentPane().add(btnNewButton_4);
 		
 		JButton btnNewButton_5 = new JButton("Ajouter admin");
@@ -105,7 +108,7 @@ public class profils_admin {
 				
 			}
 		});
-		btnNewButton_5.setBounds(143, 161, 139, 23);
+		btnNewButton_5.setBounds(143, 161, 165, 23);
 		frame.getContentPane().add(btnNewButton_5);
 		
 		JButton btnNewButton_6 = new JButton("Afficher les utilisateurs");

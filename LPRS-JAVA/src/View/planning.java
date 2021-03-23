@@ -20,6 +20,7 @@ import com.sun.jdi.connect.spi.Connection;
 
 import manager.BDD;
 import manager.ConnexionJM;
+import java.awt.Color;
 
 public class planning {
 
@@ -54,6 +55,7 @@ public class planning {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.getContentPane().setBackground(new Color(0, 139, 139));
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
@@ -75,6 +77,7 @@ public class planning {
 		frame.getContentPane().add(btnNewButton);
 		
 		JLabel lblNewLabel = new JLabel("Planning");
+		lblNewLabel.setForeground(new Color(255, 255, 255));
 		lblNewLabel.setBounds(179, 24, 62, 14);
 		frame.getContentPane().add(lblNewLabel);
 		

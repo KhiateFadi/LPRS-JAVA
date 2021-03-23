@@ -15,6 +15,7 @@ import javax.swing.JTextField;
 import manager.ConnexionJM;
 
 import javax.swing.JButton;
+import java.awt.Color;
 
 public class retard {
 
@@ -52,11 +53,13 @@ public class retard {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.getContentPane().setBackground(new Color(0, 139, 139));
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Retard");
+		lblNewLabel.setForeground(new Color(255, 255, 255));
 		lblNewLabel.setBounds(172, 11, 49, 14);
 		frame.getContentPane().add(lblNewLabel);
 		
@@ -81,18 +84,22 @@ public class retard {
 		textField_3.setColumns(10);
 		
 		JLabel lblNewLabel_1 = new JLabel("Nom");
+		lblNewLabel_1.setForeground(new Color(255, 255, 255));
 		lblNewLabel_1.setBounds(44, 49, 49, 14);
 		frame.getContentPane().add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("Pr\u00E9nom");
+		lblNewLabel_2.setForeground(new Color(255, 255, 255));
 		lblNewLabel_2.setBounds(44, 95, 49, 14);
 		frame.getContentPane().add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("Classe");
+		lblNewLabel_3.setForeground(new Color(255, 255, 255));
 		lblNewLabel_3.setBounds(44, 141, 49, 14);
 		frame.getContentPane().add(lblNewLabel_3);
 		
 		JLabel lblNewLabel_4 = new JLabel("Date");
+		lblNewLabel_4.setForeground(new Color(255, 255, 255));
 		lblNewLabel_4.setBounds(44, 184, 49, 14);
 		frame.getContentPane().add(lblNewLabel_4);
 		

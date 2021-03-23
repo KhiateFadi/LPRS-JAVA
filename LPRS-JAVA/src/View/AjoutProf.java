@@ -90,7 +90,7 @@ public class AjoutProf {
 		frame.getContentPane().add(lblNewLabel_3);
 		
 		JButton btnNewButton = new JButton("Valider");
-		btnNewButton.setBounds(160, 232, 89, 23);
+		btnNewButton.setBounds(160, 232, 96, 23);
 		frame.getContentPane().add(btnNewButton);
 	}
 }

@@ -75,7 +75,7 @@ public class AjoutEtudiant {
 		textField_1.setColumns(10);
 		
 		textField_2 = new JTextField();
-		textField_2.setBounds(159, 126, 96, 20);
+		textField_2.setBounds(159, 114, 96, 20);
 		frame.getContentPane().add(textField_2);
 		textField_2.setColumns(10);
 		
@@ -91,16 +91,16 @@ public class AjoutEtudiant {
 		
 		JLabel lblNewLabel_3 = new JLabel("Mail");
 		lblNewLabel_3.setForeground(new Color(255, 255, 255));
-		lblNewLabel_3.setBounds(44, 129, 49, 14);
+		lblNewLabel_3.setBounds(44, 117, 49, 14);
 		frame.getContentPane().add(lblNewLabel_3);
 		
 		JLabel lblNewLabel_4 = new JLabel("Mot de passe");
 		lblNewLabel_4.setForeground(new Color(255, 255, 255));
-		lblNewLabel_4.setBounds(44, 170, 71, 14);
+		lblNewLabel_4.setBounds(44, 148, 71, 14);
 		frame.getContentPane().add(lblNewLabel_4);
 		
 		textField_3 = new JTextField();
-		textField_3.setBounds(159, 167, 96, 20);
+		textField_3.setBounds(159, 145, 96, 20);
 		frame.getContentPane().add(textField_3);
 		textField_3.setColumns(10);
 		
@@ -153,12 +153,12 @@ public class AjoutEtudiant {
 		
 		textField_4 = new JTextField();
 		textField_4.setColumns(10);
-		textField_4.setBounds(159, 198, 96, 20);
+		textField_4.setBounds(159, 176, 96, 20);
 		frame.getContentPane().add(textField_4);
 		
 		JLabel lblNewLabel_3_1 = new JLabel("classe");
 		lblNewLabel_3_1.setForeground(new Color(255, 255, 255));
-		lblNewLabel_3_1.setBounds(44, 201, 49, 14);
+		lblNewLabel_3_1.setBounds(44, 179, 49, 14);
 		frame.getContentPane().add(lblNewLabel_3_1);
 	}
 }
