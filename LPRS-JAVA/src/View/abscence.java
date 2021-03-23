@@ -15,6 +15,7 @@ import javax.swing.JTextField;
 import manager.ConnexionJM;
 
 import javax.swing.JOptionPane;
+import java.awt.Color;
 
 public class abscence {
 
@@ -53,11 +54,15 @@ public class abscence {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.getContentPane().setBackground(new Color(0, 139, 139));
+		frame.getContentPane().setForeground(new Color(0, 139, 139));
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Abscence");
+		lblNewLabel.setForeground(new Color(255, 255, 255));
+		lblNewLabel.setBackground(new Color(255, 255, 255));
 		lblNewLabel.setBounds(179, 22, 49, 14);
 		frame.getContentPane().add(lblNewLabel);
 		
@@ -82,18 +87,22 @@ public class abscence {
 		textField_3.setColumns(10);
 		
 		JLabel lblNewLabel_1 = new JLabel("Nom");
+		lblNewLabel_1.setForeground(new Color(255, 255, 255));
 		lblNewLabel_1.setBounds(46, 62, 49, 14);
 		frame.getContentPane().add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("Pr\u00E9nom");
+		lblNewLabel_2.setForeground(new Color(255, 255, 255));
 		lblNewLabel_2.setBounds(46, 103, 49, 14);
 		frame.getContentPane().add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("Classe");
+		lblNewLabel_3.setForeground(new Color(255, 255, 255));
 		lblNewLabel_3.setBounds(46, 141, 49, 14);
 		frame.getContentPane().add(lblNewLabel_3);
 		
 		JLabel lblNewLabel_4 = new JLabel("Date");
+		lblNewLabel_4.setForeground(new Color(255, 255, 255));
 		lblNewLabel_4.setBounds(46, 172, 49, 14);
 		frame.getContentPane().add(lblNewLabel_4);
 		

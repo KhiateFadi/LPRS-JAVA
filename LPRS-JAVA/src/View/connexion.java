@@ -11,6 +11,7 @@ import javax.swing.JTextField;
 import manager.ConnexionJM;
 
 import javax.swing.JButton;
+import java.awt.Color;
 
 public class connexion {
 
@@ -46,11 +47,13 @@ public class connexion {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.getContentPane().setBackground(new Color(0, 139, 139));
 		frame.setBounds(100, 100, 435, 311);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Connectez vous");
+		lblNewLabel.setForeground(new Color(255, 255, 255));
 		lblNewLabel.setBounds(154, 36, 159, 14);
 		frame.getContentPane().add(lblNewLabel);
 		
@@ -82,14 +85,17 @@ public class connexion {
 		frame.getContentPane().add(btnNewButton);
 		
 		JLabel lblNewLabel_1 = new JLabel("Email");
+		lblNewLabel_1.setForeground(new Color(255, 255, 255));
 		lblNewLabel_1.setBounds(54, 89, 49, 14);
 		frame.getContentPane().add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("Mots de passe");
+		lblNewLabel_2.setForeground(new Color(255, 255, 255));
 		lblNewLabel_2.setBounds(54, 143, 71, 14);
 		frame.getContentPane().add(lblNewLabel_2);
 		
 		JButton btnNewButton_1 = new JButton("Retour");
+		btnNewButton_1.setForeground(new Color(0, 0, 0));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Accueil Accueil= new Accueil();

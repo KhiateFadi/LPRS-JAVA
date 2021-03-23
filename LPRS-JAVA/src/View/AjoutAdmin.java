@@ -6,6 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.JButton;
+import java.awt.Color;
 
 public class AjoutAdmin {
 
@@ -43,6 +44,7 @@ public class AjoutAdmin {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.getContentPane().setBackground(new Color(0, 139, 139));
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
@@ -68,18 +70,22 @@ public class AjoutAdmin {
 		textField_3.setColumns(10);
 		
 		JLabel lblNewLabel = new JLabel("Nom");
+		lblNewLabel.setForeground(new Color(255, 255, 255));
 		lblNewLabel.setBounds(42, 55, 49, 14);
 		frame.getContentPane().add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Pr\u00E9nom");
+		lblNewLabel_1.setForeground(new Color(255, 255, 255));
 		lblNewLabel_1.setBounds(42, 106, 49, 14);
 		frame.getContentPane().add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("Mail");
+		lblNewLabel_2.setForeground(new Color(255, 255, 255));
 		lblNewLabel_2.setBounds(42, 160, 49, 14);
 		frame.getContentPane().add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("Mots de passe");
+		lblNewLabel_3.setForeground(new Color(255, 255, 255));
 		lblNewLabel_3.setBounds(42, 204, 108, 14);
 		frame.getContentPane().add(lblNewLabel_3);
 		

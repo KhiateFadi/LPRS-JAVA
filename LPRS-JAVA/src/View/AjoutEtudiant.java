@@ -15,6 +15,7 @@ import javax.mail.MessagingException;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Color;
 
 public class AjoutEtudiant {
 
@@ -53,11 +54,13 @@ public class AjoutEtudiant {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.getContentPane().setBackground(new Color(0, 139, 139));
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Ajouter des \u00E9tudiants");
+		lblNewLabel.setForeground(new Color(255, 255, 255));
 		lblNewLabel.setBounds(159, 27, 107, 14);
 		frame.getContentPane().add(lblNewLabel);
 		
@@ -77,18 +80,22 @@ public class AjoutEtudiant {
 		textField_2.setColumns(10);
 		
 		JLabel lblNewLabel_1 = new JLabel("Nom");
+		lblNewLabel_1.setForeground(new Color(255, 255, 255));
 		lblNewLabel_1.setBounds(44, 55, 49, 14);
 		frame.getContentPane().add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("Pr\u00E9nom");
+		lblNewLabel_2.setForeground(new Color(255, 255, 255));
 		lblNewLabel_2.setBounds(44, 86, 49, 14);
 		frame.getContentPane().add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("Mail");
+		lblNewLabel_3.setForeground(new Color(255, 255, 255));
 		lblNewLabel_3.setBounds(44, 129, 49, 14);
 		frame.getContentPane().add(lblNewLabel_3);
 		
 		JLabel lblNewLabel_4 = new JLabel("Mot de passe");
+		lblNewLabel_4.setForeground(new Color(255, 255, 255));
 		lblNewLabel_4.setBounds(44, 170, 71, 14);
 		frame.getContentPane().add(lblNewLabel_4);
 		
@@ -150,6 +157,7 @@ public class AjoutEtudiant {
 		frame.getContentPane().add(textField_4);
 		
 		JLabel lblNewLabel_3_1 = new JLabel("classe");
+		lblNewLabel_3_1.setForeground(new Color(255, 255, 255));
 		lblNewLabel_3_1.setBounds(44, 201, 49, 14);
 		frame.getContentPane().add(lblNewLabel_3_1);
 	}

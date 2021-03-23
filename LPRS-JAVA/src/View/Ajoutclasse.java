@@ -14,6 +14,7 @@ import manager.ConnexionJM;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Color;
 
 public class Ajoutclasse {
 
@@ -52,11 +53,13 @@ public class Ajoutclasse {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.getContentPane().setBackground(new Color(0, 139, 139));
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Ajouter une classe");
+		lblNewLabel.setForeground(new Color(255, 255, 255));
 		lblNewLabel.setBounds(175, 27, 92, 14);
 		frame.getContentPane().add(lblNewLabel);
 		
@@ -86,10 +89,12 @@ public class Ajoutclasse {
 		frame.getContentPane().add(btnNewButton);
 		
 		JLabel lblNewLabel_1 = new JLabel("Nom de la classe");
+		lblNewLabel_1.setForeground(new Color(255, 255, 255));
 		lblNewLabel_1.setBounds(28, 77, 101, 14);
 		frame.getContentPane().add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("Nombre d'el\u00E8ve");
+		lblNewLabel_2.setForeground(new Color(255, 255, 255));
 		lblNewLabel_2.setBounds(28, 139, 77, 14);
 		frame.getContentPane().add(lblNewLabel_2);
 		

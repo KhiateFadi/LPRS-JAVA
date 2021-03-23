@@ -8,6 +8,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Color;
 
 public class Accueil {
 
@@ -40,11 +41,14 @@ public class Accueil {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.getContentPane().setBackground(new Color(0, 128, 128));
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 
 		JLabel lblNewLabel = new JLabel("Bienvenue");
+		lblNewLabel.setForeground(new Color(255, 255, 255));
+		lblNewLabel.setBackground(new Color(255, 255, 255));
 		lblNewLabel.setBounds(187, 49, 125, 23);
 		frame.getContentPane().add(lblNewLabel);
 

@@ -17,6 +17,7 @@ import manager.ConnexionJM;
 import java.awt.Checkbox;
 import javax.swing.JComboBox;
 import javax.swing.JButton;
+import java.awt.Color;
 
 public class accueil_prof {
 
@@ -49,12 +50,14 @@ public class accueil_prof {
 	private void initialize() throws SQLException {
 		JOptionPane.showMessageDialog(null, "Vous êtes bien connecté !");
 		frame = new JFrame();
+		frame.getContentPane().setBackground(new Color(0, 139, 139));
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		;
 		JLabel lblNewLabel = new JLabel("classe ");
+		lblNewLabel.setForeground(new Color(255, 255, 255));
 		lblNewLabel.setBounds(26, 71, 49, 14);
 		frame.getContentPane().add(lblNewLabel);
 		JButton btnNewButton = new JButton("Valider");
@@ -68,6 +71,7 @@ public class accueil_prof {
 		btnNewButton.setBounds(154, 120, 107, 23);
 		frame.getContentPane().add(btnNewButton);
 		JLabel lblNewLabel_1 = new JLabel("planning");
+		lblNewLabel_1.setForeground(new Color(255, 255, 255));
 		lblNewLabel_1.setBounds(26, 124, 49, 14);
 		frame.getContentPane().add(lblNewLabel_1);
 		JButton btnNewButton_1 = new JButton("valider");
@@ -81,9 +85,11 @@ public class accueil_prof {
 		btnNewButton_1.setBounds(154, 172, 107, 23);
 		frame.getContentPane().add(btnNewButton_1);
 		JLabel lblNewLabel_2 = new JLabel("prise de rendez-vous");
+		lblNewLabel_2.setForeground(new Color(255, 255, 255));
 		lblNewLabel_2.setBounds(26, 176, 118, 14);
 		frame.getContentPane().add(lblNewLabel_2);
 		JLabel lblNewLabel_3 = new JLabel("Bienvenue dans votre espace");
+		lblNewLabel_3.setForeground(new Color(255, 255, 255));
 		lblNewLabel_3.setBounds(137, 24, 165, 14);
 		frame.getContentPane().add(lblNewLabel_3);
 		JButton btnNewButton_2 = new JButton("Modifier son profil");

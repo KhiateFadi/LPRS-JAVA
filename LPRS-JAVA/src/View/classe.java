@@ -19,6 +19,7 @@ import javax.swing.ListSelectionModel;
 import javax.swing.table.DefaultTableModel;
 
 import manager.ConnexionJM;
+import java.awt.Color;
 
 public class classe {
 
@@ -55,11 +56,13 @@ public class classe {
 	 */
 	public void initialize() throws SQLException {
 		frame = new JFrame();
+		frame.getContentPane().setBackground(new Color(0, 139, 139));
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("classe");
+		lblNewLabel.setForeground(new Color(255, 255, 255));
 		lblNewLabel.setBounds(169, 26, 79, 14);
 		frame.getContentPane().add(lblNewLabel);
 		
